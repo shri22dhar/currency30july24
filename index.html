@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>Currency Converter App</title>
+		<style>
+			*{font-family:Calibri;font-size:60px;}
+			body{background-color:azure;}
+		</style>
+	</head>
+	<body>
+		<center>
+			<h1>Currency Converter App</h1>
+			<form>
+				<label for "dollar">Amt in $</label>
+				<input type="number" step="any" id="dollar" placeholder="Enter amt in $$"/>
+				<br/><br/>
+				<label for "rupees">Amt in &#8377;</label>
+				<input type="number" step="any" id="rupees" placeholder="Enter amt in &#8377;"/>
+				<br/><br/>
+			</form>
+			<script>
+				let dollar=document.getElementById("dollar");
+				let rupees=document.getElementById("rupees");
+			
+				dollar.addEventListener("input",function()
+				{
+					let d =parseFloat(dollar.value);
+					let r=d*84;
+					rupees.value=r.toFixed(2);
+					});
+				rupees.addEventListener("input",function()
+				{
+					let r =parseFloat(rupees.value);
+					let d=r/84;
+					dollar.value=d.toFixed(2);
+					});
+
+
+			</script>
+		</center>
+	</body>
+</html>
